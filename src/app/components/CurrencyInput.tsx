@@ -1,4 +1,3 @@
-
 export interface ICurrencyInputProps {
   amount: number
   currency: string
@@ -14,23 +13,18 @@ const CurrencyInput = ({
   onAmountChange,
   onCurrencyChange
 }: ICurrencyInputProps) => {
-
-  const handleAmount= (e: React.ChangeEvent<HTMLInputElement>) => {
-  console.log(e.target.value)
+  const handleAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     onAmountChange(Number(e.target.value))
   }
 
-  const handleCurrency =(e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleCurrency = (e: React.ChangeEvent<HTMLSelectElement>) => {
     onCurrencyChange(e.target.value)
   }
 
   return (
     <div className='group'>
-      <input type='text' value={amount} onChange={handleAmount} />
-      <select
-        value={currency}
-        onChange={handleCurrency}
-      >
+      <input type='text' value={amount.toString()} onChange={handleAmount} />
+      <select value={currency} onChange={handleCurrency}>
         {currencyOpts.map((c) => (
           <option key={c} value={c}>
             {c.toUpperCase()}

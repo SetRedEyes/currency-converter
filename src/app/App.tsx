@@ -1,9 +1,12 @@
-import './App.css'
+import './App.scss'
 import { useEffect, useState } from 'react'
 import CurrencyInput from './components/CurrencyInput'
 import axios from 'axios'
-import { takeCurrencyNames } from '../utils/takeСurrencyNames'
 import { convertCurrency } from '../utils/convertCurrency'
+import Converter from './components/Converter'
+import { Container } from 'react-bootstrap'
+import Header from './components/Header'
+import CurrencyBlock from './components/CurrencyBlock'
 
 const App = () => {
   const [amount1, setAmount1] = useState(1)
@@ -12,15 +15,17 @@ const App = () => {
   const [currency2, setCurrency2] = useState('uah')
   const [rates, setRates] = useState<{ [key: string]: number }>({})
 
+  const fetchData = async () => {
+    const { data } = await axios.get(
+      'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/uah.json'
+    )
+
+    const { uah, usd, eur } = data.uah
+    setRates({ uah, usd, eur })
+  }
+
   useEffect(() => {
-    axios
-      .get(
-        'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/uah.json'
-      )
-      .then((res) => {
-        const uah = res.data.uah
-        setRates(uah)
-      })
+    fetchData().catch(console.error)
   }, [])
 
   useEffect(() => {
@@ -50,22 +55,26 @@ const App = () => {
   }
 
   return (
-    <div>
-      <CurrencyInput
-        onAmountChange={handleAmount1Change}
-        onCurrencyChange={handleCurrency1Change}
-        currencyOpts={takeCurrencyNames(rates)}
-        amount={amount1}
-        currency={currency1}
-      />
-      <CurrencyInput
-        onAmountChange={handleAmount2Change}
-        onCurrencyChange={handleCurrency2Change}
-        currencyOpts={takeCurrencyNames(rates)}
-        amount={amount2}
-        currency={currency2}
-      />
-    </div>
+    <>
+      <Header/>
+      {/* <div>
+        <CurrencyInput
+          onAmountChange={handleAmount1Change}
+          onCurrencyChange={handleCurrency1Change}
+          currencyOpts={Object.keys(rates)}
+          amount={amount1}
+          currency={currency1}
+        />
+        <CurrencyInput
+          onAmountChange={handleAmount2Change}
+          onCurrencyChange={handleCurrency2Change}
+          currencyOpts={Object.keys(rates)}
+          amount={amount2}
+          currency={currency2}
+        />
+        <Converter />
+      </div> */}
+    </>
   )
 }
 

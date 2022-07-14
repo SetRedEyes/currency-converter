@@ -1,0 +1,87 @@
+.donate-btn {
+  width: 14rem;
+  height: 4rem;
+  color: #ffffff;
+  background-color: transparent;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid #ffff00;
+  border-radius: 4px;
+  transition: all 500ms ease-in-out;
+
+  &:hover {
+    background-color: transparent;
+    border-color: #0d6efd;
+  }
+
+  &:active {
+    outline: none;
+    background-color: transparent !important;
+    border: 2px solid #ffff00 !important;
+    background-color: transparent !important;
+  }
+
+  &:focus {
+    border: 2px solid #ffff00 !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  &::before {
+    width: 0;
+    height: 30px;
+    background-color: #0000ff;
+    transition: all 500ms ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+  }
+
+  &::after {
+    width: 0;
+    height: 30px;
+    background-color: #ffff00;
+    transition: all 500ms ease-in-out;
+    transition-delay: 200ms;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    content: '';
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: 13.75rem;
+  }
+
+  span {
+    position: absolute;
+    z-index: 10;
+    transition: all 500ms ease-in-out;
+    transition-delay: 100ms;
+  }
+
+  #Support {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: red;
+    padding-top: 0.2rem;
+  }
+
+  #AFU {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding-top: 2rem;
+  }
+
+  &:hover #Support {
+    color: #ffff00;
+  }
+
+  &:hover #AFU {
+    color: #0000ff;
+  }
+}
