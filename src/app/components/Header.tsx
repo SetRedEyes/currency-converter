@@ -1,7 +1,7 @@
-import { Button, Container, Image,  Navbar } from 'react-bootstrap'
+import { Button, Container, Image, Navbar } from 'react-bootstrap'
 import trident from '../../assets/images/trident.svg'
 import uah from '../../assets/images/uah.svg'
-import CurrencyBlock from './CurrencyBlock'
+import CurrencyBlock from './CurrencyTable'
 const Header = () => {
   return (
     <Navbar bg='dark' variant='dark' expand='lg'>
@@ -11,16 +11,16 @@ const Header = () => {
           <h2 className='d-inline-block'>Realtime UAH Currency</h2>
           <Image src={uah}></Image>
           <br />
-            <Button
-              className='donate-btn'
-              href='https://bank.gov.ua/ua/about/support-the-armed-forces'
-              target='_blank'
-              rel='noreferrer'
-            >
-              <span id='Support'>Підтримати</span>
-              <br />
-              <span id='AFU'>Збройні Сили України</span>
-            </Button>
+          <Button
+            className='donate-btn'
+            href='https://savelife.in.ua/donate/'
+            target='_blank'
+            rel='noreferrer'
+          >
+            <span id='Support'>Підтримати</span>
+            <br />
+            <span id='AFU'>Збройні Сили України</span>
+          </Button>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
         <Navbar.Collapse

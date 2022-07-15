@@ -1,20 +1,14 @@
 import { Card, Table } from 'react-bootstrap'
 import { getTodaysDate } from '../../utils/getTodaysDate'
 
-const CurrencyBlock = () => {
+const CurrencyTable = () => {
   return (
     <Card style={{ width: '17.5rem' }} className='ms-5'>
       <Card.Header className='text-center'>
-        Курс станом на{' '}
-          <i>{getTodaysDate()}</i>
+        Курс станом на <i>{getTodaysDate()}</i>
       </Card.Header>
       <Card.Body className='p-0'>
-        <Table
-          bordered
-          hover
-          size='sm'
-          className='m-0 text-center'
-        >
+        <Table bordered hover size='sm' className='m-0 text-center'>
           <thead>
             <tr>
               <td>&#x1F5D8;</td>
@@ -41,4 +35,4 @@ const CurrencyBlock = () => {
   )
 }
 
-export default CurrencyBlock
+export default CurrencyTable

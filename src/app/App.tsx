@@ -4,9 +4,8 @@ import CurrencyInput from './components/CurrencyInput'
 import axios from 'axios'
 import { convertCurrency } from '../utils/convertCurrency'
 import Converter from './components/Converter'
-import { Container } from 'react-bootstrap'
 import Header from './components/Header'
-import CurrencyBlock from './components/CurrencyBlock'
+import CurrencyBlock from './components/CurrencyTable'
 
 const App = () => {
   const [amount1, setAmount1] = useState(1)
@@ -57,6 +56,9 @@ const App = () => {
   return (
     <>
       <Header/>
+      <Converter />
+     
+
       {/* <div>
         <CurrencyInput
           onAmountChange={handleAmount1Change}
@@ -72,7 +74,6 @@ const App = () => {
           amount={amount2}
           currency={currency2}
         />
-        <Converter />
       </div> */}
     </>
   )
