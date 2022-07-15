@@ -82,10 +82,10 @@ export const ConverterProvider = ({ children }: ConverterContextProps) => {
   }
 
   const getDollarExchangeRate = (amount = 1) =>
-    convertCurrency(amount1, rates['uah'], rates['usd'])
+    convertCurrency(amount, rates['uah'], rates['usd'])
 
   const getEuroExchangeRate = (amount = 1) =>
-    convertCurrency(amount1, rates['uah'], rates['eur'])
+    convertCurrency(amount, rates['uah'], rates['eur'])
 
   function errorCatcher(error: any) {
     const { message } = error.response.data
