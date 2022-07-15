@@ -1,6 +1,7 @@
 body {
   background: url('../assets/images/bg.jpg') no-repeat;
   background-size: 100vh;
+  background-position: 50% -1.9rem;
 }
 
 .donate-btn {
@@ -34,7 +35,7 @@ body {
 
   &::before {
     width: 0;
-    height: 30px;
+    height: 1.9rem;
     background-color: #0000ff;
     transition: all 500ms ease-in-out;
     position: absolute;
@@ -45,12 +46,12 @@ body {
 
   &::after {
     width: 0;
-    height: 30px;
+    height: 1.9rem;
     background-color: #ffff00;
     transition: all 500ms ease-in-out;
     transition-delay: 200ms;
     position: absolute;
-    top: 30px;
+    top: 1.9rem;
     left: 0;
     content: '';
   }
