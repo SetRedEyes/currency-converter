@@ -91,10 +91,14 @@ body {
   }
 }
 
+.exchange-table {
+  width: 17.5rem;
+}
+
 .converter-container {
   display: flex;
   justify-content: center;
-  margin-top: 4rem;
+  margin-top: 1.5rem;
 
   .converter-card {
     width: 50rem;
@@ -102,6 +106,11 @@ body {
     transition: 0.3s;
     &:hover {
       box-shadow: 0px 0px 77px 3px rgba(66, 68, 90, 1);
+    }
+
+    .exchange-arrows {
+      width: 3rem;
+      height: 3rem;
     }
 
     .form-group {

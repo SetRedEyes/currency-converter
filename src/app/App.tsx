@@ -1,13 +1,14 @@
 import './App.scss'
 import Converter from './components/Converter'
 import Header from './components/Header'
+import { ConverterProvider } from './hooks/useConverter'
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <Converter />
-    </>
+    <ConverterProvider>
+        <Header />
+        <Converter />
+    </ConverterProvider>
   )
 }
 

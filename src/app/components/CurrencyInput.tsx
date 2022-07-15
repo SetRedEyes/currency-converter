@@ -15,6 +15,7 @@ const CurrencyInput = ({
   onAmountChange,
   onCurrencyChange
 }: ICurrencyInputProps) => {
+  
   const handleAmount = (e: React.ChangeEvent<HTMLInputElement>) => {
     onAmountChange(Number(e.target.value))
   }

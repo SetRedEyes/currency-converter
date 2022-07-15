@@ -1,6 +1,7 @@
 import { Button, Container, Image, Navbar } from 'react-bootstrap'
 import trident from '../../assets/images/trident.svg'
 import uah from '../../assets/images/uah.svg'
+
 import CurrencyTable from './CurrencyTable'
 const Header = () => {
   return (

@@ -1,5 +1,6 @@
 import httpService from './http.service'
-const uahEndpoint = 'uah.json/'
+
+const uahEndpoint = 'uah.json'
 
 const uahService = {
   fetchAll: async () => {
