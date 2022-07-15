@@ -1,5 +1,5 @@
 import { Card, Table } from 'react-bootstrap'
-import { getTodaysDate } from '../../utils/getTodaysDate'
+import { getTodaysDate } from '../utils/getTodaysDate'
 
 const CurrencyTable = () => {
   return (

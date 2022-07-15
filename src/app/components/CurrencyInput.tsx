@@ -1,3 +1,5 @@
+import { Form, InputGroup } from 'react-bootstrap'
+
 export interface ICurrencyInputProps {
   amount: number
   currency: string
@@ -22,16 +24,26 @@ const CurrencyInput = ({
   }
 
   return (
-    <div className='group'>
-      <input type='text' value={amount.toString()} onChange={handleAmount} />
-      <select value={currency} onChange={handleCurrency}>
+    <InputGroup size='lg'>
+      <Form.Control
+        type='number'
+        value={amount.toString()}
+        onChange={handleAmount}
+      />
+
+      <Form.Select
+        className='currency-select'
+        aria-label='Default select example'
+        value={currency}
+        onChange={handleCurrency}
+      >
         {currencyOpts.map((c) => (
           <option key={c} value={c}>
             {c.toUpperCase()}
           </option>
         ))}
-      </select>
-    </div>
+      </Form.Select>
+    </InputGroup>
   )
 }
 
