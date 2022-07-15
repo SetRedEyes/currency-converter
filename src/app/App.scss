@@ -114,20 +114,13 @@ body {
       height: 3rem;
     }
 
-    .form-group {
-      width: 100%;
-    }
-
     .form-control {
-      width: 50% !important;
+      width: 50%;
     }
   }
 }
 
 @media screen and (max-width: 770px) {
-  .form-group {
-    width: 5rem;
-  }
   .form-control {
     width: 1% !important;
   }
