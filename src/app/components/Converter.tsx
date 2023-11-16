@@ -26,7 +26,7 @@ const Converter = () => {
         <Card className='converter-card'>
           <Card.Body>
             <Card.Title className='ms-3'>Курс обміну валют</Card.Title>
-            <Container className='d-flex mt-4'>
+            <Container className='d-flex mt-4 exhange-container'>
               <CurrencyInput
                 onAmountChange={handleAmount1Change}
                 onCurrencyChange={handleCurrency1Change}
